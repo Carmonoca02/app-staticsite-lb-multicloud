@@ -259,7 +259,7 @@ CUSTOM_DATA
         disable_password_authentication = false
     }
 }
-
+# oi
 resource "azurerm_public_ip" "lb" {
     name                = "lb"
     location            = azurerm_resource_group.rg.location
