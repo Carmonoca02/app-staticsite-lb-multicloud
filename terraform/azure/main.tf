@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rg" {
-    name     = "rg-staticsite-lb"
+    name     = "rg-staticsite-lb-multicloud-fernanda"
     location = "brazilsouth"
 }
 
@@ -265,7 +265,7 @@ resource "azurerm_public_ip" "lb" {
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
     allocation_method   = "Static"
-    domain_name_label   = "staticsite-lb-azure-kledson"
+    domain_name_label   = "staticsite-lb-azure-fernanda"
 }
 
 resource "azurerm_lb" "lb" {
@@ -291,7 +291,7 @@ resource "azurerm_lb_rule" "lb" {
     backend_port                   = 80
     frontend_ip_configuration_name = "lb"
     backend_address_pool_ids       = [azurerm_lb_backend_address_pool.lb.id]
-    load_distribution              = "SourceIPProtocol"
+    load_distribution              = "Deault"
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "vm01" {
